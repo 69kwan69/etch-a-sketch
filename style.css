@@ -1,0 +1,149 @@
+/* CSS resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+/* Utility Classes */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+}
+
+
+/* Styling Elements */
+body {
+    flex-direction: column;
+}
+
+.sections {
+    flex-direction: column;
+    width: 35%;
+}
+
+.sections .tools {
+    --spacing: 1rem;
+    gap: var(--spacing);
+    padding: var(--spacing);
+    width: 100%;
+}
+
+.sections .tools .tool {
+    flex-direction: column;
+
+    padding: .5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: .3rem;
+
+    cursor: pointer;
+    transition: .2s;
+}
+
+
+.sections .tools .tool.selected {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn {
+    width: 100%;
+    height: .5rem;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.rainbow.btn {
+    background: linear-gradient(90deg,
+            hsl(0, 100%, 50%) 0%,
+            hsl(36, 100%, 50%) 10%,
+            hsl(64, 74%, 50%) 20%,
+            hsl(118, 68%, 58%) 30%,
+            hsl(179, 68%, 55%) 40%,
+            hsl(188, 76%, 54%) 50%,
+            hsl(212, 86%, 52%) 60%,
+            hsl(260, 89%, 52%) 70%,
+            hsl(284, 94%, 51%) 80%,
+            hsl(308, 97%, 51%) 90%,
+            hsl(0, 100%, 50%) 100%);
+}
+
+input[type='range'] {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.sections .board {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+
+    border: 1px solid rgb(40, 40, 40);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.grid-cell {
+    border: 1px solid rgb(40, 40, 40);
+}
